@@ -19,7 +19,7 @@ namespace AnimalShelterApi.Controllers.v2
 
     //get api/v1/residents
     [HttpGet]
-    public async Task<ActionResult<IEnumerable<Resident>>> Get(string name, string species, string sex, bool? chipped, DateTime? admissionDate)
+    public async Task<ActionResult<IEnumerable<Resident>>> Get(string name, string species, string sex, bool? chipped, DateTime? admissionDate, int pageNumber = 1, int pageSize = 5)
     {
       IQueryable<Resident> query = _db.Residents.AsQueryable();
 
@@ -48,7 +48,9 @@ namespace AnimalShelterApi.Controllers.v2
         query = query.Where(entry => entry.AdmissionDate == admissionDate);
       }
 
-      return await query.ToListAsync();
+      int skip = (pageNumber -1) * pageSize;
+
+      return await query.Skip(skip).Take(pageSize).ToListAsync();
     }
 
     [HttpGet("{id}")]
