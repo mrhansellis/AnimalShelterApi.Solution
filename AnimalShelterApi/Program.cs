@@ -2,7 +2,6 @@ using AnimalShelterApi.Models;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.AspNetCore.Mvc.Versioning;
 using Microsoft.AspNetCore.Mvc.ApiExplorer;
-using Microsoft.AspNetCore.Mvc;
 
 var builder = WebApplication.CreateBuilder(args);
 
@@ -60,9 +59,7 @@ else
 	app.UseHttpsRedirection();
 }
 
-//app.UseRequestLocalization(options);
 app.UseStaticFiles();
-//app.UseMiddleware<LocalizerMiddleware>();
 
 app.UseAuthorization();
 

@@ -17,7 +17,7 @@ namespace AnimalShelterApi.Controllers.v2
       _db = db;
     }
 
-    //get api/v1/residents
+    //get api/v2/residents
     [HttpGet]
     public async Task<ActionResult<IEnumerable<Resident>>> Get(string name, string species, string sex, bool? chipped, DateTime? admissionDate, int pageNumber = 1, int pageSize = 5)
     {
@@ -75,7 +75,7 @@ namespace AnimalShelterApi.Controllers.v2
       return CreatedAtAction(nameof(GetResident), new { id = resident.ResidentId }, resident);
     }
 
-    //PUT: api/v1/Residents/5
+    //PUT: api/v2/Residents/5
     [HttpPut("{id}")]
     public async Task<IActionResult> Put(int id, Resident resident)
     {

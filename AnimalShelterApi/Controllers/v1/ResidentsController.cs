@@ -2,7 +2,6 @@ using Microsoft.AspNetCore.Mvc;
 using Microsoft.EntityFrameworkCore;
 using AnimalShelterApi.Models;
 
-//v1 does not accept query strings, does not include pagination
 namespace AnimalShelterApi.Controllers.v1
 {
   [ApiController]
