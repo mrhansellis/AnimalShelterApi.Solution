@@ -138,8 +138,6 @@ You may use whatever API viewer you prefer. The API is set up to work in Swagger
 - 404: Not found.
 <br>
 <br>
----
-<br>
 
 ```PUT /api/v2/residents/{id}```
 
@@ -162,7 +160,6 @@ Note: All parameters must be entered and match existing results, only change the
 - 400: Bad request.
 - 404: Not found.
 <br>
-<br>
 ---
 <br>
 
@@ -177,7 +174,6 @@ Note: All parameters must be entered and match existing results, only change the
 
 - 204: No content.
 - 404: Not found.
-<br>
 <br>
 ---
 <br>

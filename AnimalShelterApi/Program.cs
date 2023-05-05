@@ -3,9 +3,23 @@ using Microsoft.EntityFrameworkCore;
 using Microsoft.AspNetCore.Mvc.Versioning;
 using Microsoft.AspNetCore.Mvc.ApiExplorer;
 
+//api thing
+var MyAllowSpecificOrigins = "_MyAllowSpecificOrigins";
+
 var builder = WebApplication.CreateBuilder(args);
 
 // Add services to the container.
+
+builder.Services.AddCors(options =>
+{
+	options.AddDefaultPolicy(
+										builder => 
+										{ 
+											builder.AllowAnyOrigin()
+											.AllowAnyMethod()
+											.AllowAnyHeader();
+										});
+});
 
 builder.Services.AddControllers();
 
@@ -60,6 +74,9 @@ else
 }
 
 app.UseStaticFiles();
+//app.usecors
+
+app.UseCors();
 
 app.UseAuthorization();
 
